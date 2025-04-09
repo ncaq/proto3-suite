@@ -91,7 +91,7 @@ library
                        Proto3.Suite.Form.Encode.Core
                        Turtle.Compat
 
-  build-depends:       aeson >= 1.1.1.0 && < 2.2,
+  build-depends:       aeson >= 1.1.1.0 && < 2.3,
                        aeson-pretty,
                        attoparsec >= 0.13.0.1,
                        attoparsec-aeson >= 2.2.0.0 ,
