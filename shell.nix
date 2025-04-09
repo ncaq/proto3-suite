@@ -11,12 +11,11 @@
 , enableDhall ? false
 , enableSwagger ? true
 , swaggerWrapperFormat ? false
-, enableLargeRecords ? false
 }:
 
 let
   pkgs = import ./nix/pkgs.nix {
-    inherit compiler enableDhall enableSwagger swaggerWrapperFormat enableLargeRecords;
+    inherit compiler enableDhall enableSwagger swaggerWrapperFormat;
   };
 
   proto3-suite =
@@ -27,7 +26,6 @@ let
 
 in proto3-suite.env.overrideAttrs (old: {
   buildInputs = (old.buildInputs or []) ++ [
-    pkgs.cabal-install
     pkgs.protobuf
     pkgs.python3Packages.virtualenv
   ];
